@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../../css/business/LocalContents.module.css';
 import LocalCard from './LocalCard';
+
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 
 export default function LocalContents({db}) {
 

@@ -8,7 +8,7 @@ import {
 } from 'firebase/firestore';
 import { useNavigate } from "react-router-dom";
 
-import styles from '../../css/project/Project.module.css';
+import styles from '../css/project/Project.module.css';
 import ProjectCard from "../components/project/ProjectCard";
 
 export default function Project({db, postSet}) {
@@ -27,7 +27,7 @@ export default function Project({db, postSet}) {
 
     useEffect(() => {
         const getCLength = async () => {
-            const lengthSnapshot = await getCountFromServer(archiveRef);
+            const lengthSnapshot = await getCountFromServer(projectRef);
             setLen(lengthSnapshot.data().count);
             setPagesCnt();
         }

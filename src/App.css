@@ -1,38 +1,192 @@
-.App {
-  text-align: center;
+::-webkit-scrollbar {
+    display: none;
+}
+a {
+    text-decoration: none;
+}
+main {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.sections {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+.backgrounds {
+    position: absolute;
+    /* top: 80px; */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -9;
+}
+.backgrounds::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#introBg .slick-slider, #introBg .slick-list, #introBg .slick-slide {
+    height: 100vh;
+    z-index: -99;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/********************************************
+
+                    header
+
+***********************************************/
+#top-navbar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 2px solid #004435;
+    top: 0;
+    z-index:99;
+    transition: all 0.3s ease;
+}
+.navbar-logo {
+    display: flex;
+    width: 20%;
+    /* padding-left: 120px; */
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-logo a {
+    display: flex;
+    height: 100%;
+    text-align: center;
+}
+#logo {
+    height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.menu-box {
+    display: flex;
+    width: 80%;
+    height: 100%;
+}
+.menu-list-box {
+    display: flex;
+    width: 55%;
+    height: 100%;
+    justify-content: end;
+    align-items: center;
+}
+.menu-item {
+    padding: 8px 15px;
+    margin: 0 30px;
+    text-decoration: none;
+    color: #004435;
+    border: 2px solid #fff;
+    font-weight: 600;
+    font-size: 15pt;
+    transition: all 0.3s ease;
+}
+.menu-item:hover {
+    border: 2px solid #004435;
+}
+.menu-item:last-child {
+    margin-right: 50px;
+}
+.link-list-box {
+    display: flex;
+    width: 45%;
+    height: 100%;
+    align-items: center;
+}
+.link-list {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.link-item {
+    text-decoration: none;
+    padding: 8px 15px;
+    margin: none;
+    color: #fff;
+    background-color: #004435;
+    border: 2px solid #004435;
+    font-weight: 600;
+    font-size: 15pt;
+    transition: all 0.3s ease;
+}
+.link-item:last-child {
+    animation-name: flicker;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    margin-right: 100px;
+}
+.link-item:hover {
+    background-color: #fff;
+    color: #004435;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes flicker {
+    from {
+        background-color: #fff;
+        color: #004435;
+    }
+    to {
+        background-color: #004435;
+        color: #fff;
+    }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/********************************************
+
+                    side menu
+
+***********************************************/
+#side-nav {
+    position: fixed;
+    width: 100px;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-40%);
+    z-index: 99;
+}
+.sideNavBox {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.side-item {
+    background-color: #fff;
+    color: #004435;
+    border: 2px solid #004435;
+    border-bottom: none;
+    text-align: center;
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 11pt;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.side-item:last-child {
+    border-bottom: 2px solid #004435;
+}
+.side-item:hover, .side-item-focused {
+    background-color: #004435;
+    color: #fff;
 }

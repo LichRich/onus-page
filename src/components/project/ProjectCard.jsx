@@ -1,5 +1,7 @@
 import React from 'react'
 
+import styles from '../../css/project/ProjectCard.module.css';
+
 export default function ProjectCard({data, handler}) {
 
     const getData = () => {

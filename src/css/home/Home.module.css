@@ -1,0 +1,45 @@
+.introBgBox {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.introBgImg {
+    width: 100%;
+    z-index: -999;
+}
+
+.introContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.introMsg {
+    margin-top: 10%;
+    padding-right: 15%;
+}
+.introMsgContent {
+    color: #fff;
+    font-size: 25pt;
+    font-weight: 600;
+    animation: fadein 2s ease;
+}
+.introMsgContent:first-child {
+    font-size: 23pt;
+}
+.introMsgContent:last-child {
+    font-size: 26pt;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}

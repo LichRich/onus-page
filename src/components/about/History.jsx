@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
-export default function History() {
+export default function History({db, setter}) {
+
+    const yRef = useRef();
+    useEffect(() => {
+      const y = yRef.current.offsetTop;
+        setter(y);
+    }, [])
+
   return (
-    <div>History</div>
+    <section className='sections' id='history' ref={yRef}></section>
   )
 }
