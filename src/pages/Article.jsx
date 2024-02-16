@@ -67,7 +67,7 @@ export default function Article({db}) {
   return (
     <main>
         <section className={["sections", styles
-            .newsSection]
+            .articleSection]
             .join(" ")}>
             <div className={styles.articleContainer}>
                 <div className={styles.titleBox}>
@@ -102,6 +102,7 @@ export default function Article({db}) {
                                         thumbnail={data.imgs[0]}
                                         title={data.title}
                                         date={data.date}
+                                        category={data.category}
                                         handler={() => goArticleDetail(data)} />
                                 );
                             })

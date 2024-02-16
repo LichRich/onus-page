@@ -37,6 +37,7 @@ export default function LocalCard({name, contents, imgs}) {
                 })}
             </Slider>
         </div>
+        <div className={styles.lastLine}></div>
     </div>
   )
 }

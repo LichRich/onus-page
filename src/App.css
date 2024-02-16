@@ -14,7 +14,7 @@ main {
 .sections {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
 }
 .backgrounds {
     position: absolute;
@@ -189,4 +189,77 @@ main {
 .side-item:hover, .side-item-focused {
     background-color: #004435;
     color: #fff;
+}
+
+
+
+/********************************************
+
+                    footer
+
+***********************************************/
+.footer {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    border-top: 2px solid #004435;
+}
+.footer p {
+    margin: 0;
+}
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.footer-name-box, .footer-copy-box {
+    display: flex;
+    width: 220px;
+    height: 25px;
+    align-items: center;
+}
+.footer-name, .footer-copy {
+    font-size: 11pt;
+    font-weight: 600;
+}
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+    justify-content: space-around;
+}
+.footer-addr, .footer-phone, .footer-email {
+    font-size: 11pt;
+    font-weight: 600;
+}
+.footer-sns {
+    display: flex;
+    width: 200px;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer-sns a {
+    opacity: 0.7;
+    transition: all 0.2s ease;
+}
+.footer-sns a:hover {
+    opacity: 1;
+}
+.footer-sns img {
+    width: 40px;
+}
+.footer-logo-box {
+    display: flex;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+}
+.footer-logo {
+    height: 100%;
 }

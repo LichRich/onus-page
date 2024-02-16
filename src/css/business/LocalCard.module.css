@@ -1,0 +1,70 @@
+.localCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 30px;
+}
+.nameBox {
+    position: relative;
+    width: 100%;
+}
+.nameBg {
+    position: absolute;
+    bottom: 0;
+    left: -60px;
+    width: 150px;
+    height: 20px;
+}
+.nameBg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 15px;
+    background-color: #C3E0A6;
+    z-index: -9;
+}
+.name {
+    font-size: 22pt;
+    font-weight: 800;
+    color: #004435;
+    margin: 0;
+}
+.contents {
+    font-size: 15pt;
+    font-weight: 600;
+}
+.imgListBox {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+}
+.imgBox {
+    display: flex;
+    width: 280px;
+    height: 100%;
+    justify-content: center;
+}
+.localImg {
+    width: 95%;
+}
+.lastLine {
+    position: absolute;
+    width: 300px;
+    height: 5px;
+    bottom: 0;
+    right: 0;
+}
+.lastLine::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 500px;
+    height: 2px;
+    background-color: #004435;
+    z-index: -9;
+}

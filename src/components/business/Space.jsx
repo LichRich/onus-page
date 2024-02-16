@@ -15,7 +15,7 @@ export default function Space({db}) {
     useEffect(() => {
         const getItems = async () => {
             // spaceRef에서 문서들 가져오기 
-            const q = query(spaceRef, orderBy("spaceIdx", "desc"));
+            const q = query(spaceRef, orderBy("spaceIdx", "asc"));
             const documentSnapshots = await getDocs(q);
             setDatas(documentSnapshots.docs.map((doc) => ({
                 ...doc.data()
@@ -37,7 +37,7 @@ export default function Space({db}) {
                         addr={data.addr}
                         contents={data.contents}
                         imgs={data.imgs}
-                        isLeft={idx%2} /> :
+                        isRight={idx%2} /> :
                     <SpaceCard
                         key={idx}
                         name={data.name}
@@ -45,7 +45,7 @@ export default function Space({db}) {
                         addr=""
                         contents={data.contents}
                         imgs={data.imgs}
-                        isLeft={idx%2} /> 
+                        isRight={idx%2} /> 
 
                 )
             })}

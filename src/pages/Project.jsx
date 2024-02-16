@@ -36,23 +36,12 @@ export default function Project({db, postSet}) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const projects = query(projectRef, orderBy("id", "desc"));
-            setDocSnapshots(await getDocs(projects));
+            const projects = query(projectRef, orderBy("projectIdx", "asc"));
+            const documentSnapshots = await getDocs(projects);
+            setList(documentSnapshots.docs.map((doc) => ({...doc.data()})));
         }
         fetchData();
     }, []);
-
-    useEffect(() => {
-        const setItemList = () => {
-            if(docSnapshots !== undefined) {
-                setList(docSnapshots.docs.map((doc) => ({
-                    key: doc.id,
-                    ...doc.data()
-                })));
-            }
-        }
-        setItemList();
-    }, [docSnapshots]);
 
     const setPagesCnt = () => {
         if(len === 0) {
@@ -84,7 +73,7 @@ export default function Project({db, postSet}) {
                 <div className={styles.titleBg}></div>
                 <p className={styles.title}>PROJECT</p>
             </div>
-            <div className={styles.projectContents}>
+            <div className={styles.contentsList}>
                 {getCards()}
             </div>
         </div>

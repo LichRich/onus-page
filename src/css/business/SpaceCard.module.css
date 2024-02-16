@@ -1,0 +1,64 @@
+.spaceCard {
+    display: flex;
+    width: 100%;
+    height: 480px;
+    margin-bottom: 30px;
+}
+.spaceImgBox {
+    display: flex;
+    width: 360px;
+    height: 100%;
+}
+.imgBox {
+    width: 360px;
+    height: 100%;
+}
+.carouselItem {
+    display: flex;
+    width: 360px;
+    height: 100%;
+    text-align: center;
+}
+.spaceImg {
+    width: 360px;
+    margin: auto;
+}
+
+.spaceContentBox {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-end;
+}
+.outerBox {
+    display: flex;
+    flex-direction: column;
+    width: 92%;
+    height: 50%;
+}
+.nameBox {
+    margin-bottom: 30px;
+}
+.desc {
+    font-size: 15pt;
+    font-weight: 600;
+    color: #004435;
+}
+.name {
+    font-size: 20pt;
+    font-weight: 800;
+    color: #004435;
+    padding-left: 10px;
+}
+.addr {
+    font-size: 15pt;
+    font-weight: 600;
+}
+.contents {
+    font-size: 15pt;
+    font-weight: 600;
+}
+.right {
+    text-align: end;
+}
