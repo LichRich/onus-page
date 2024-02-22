@@ -8,13 +8,13 @@ const Intro = () => {
     const carousel_settings = {
         dots: false,
         infinite: true,
-        speed: 200,
+        speed: 500,
         fade: true,
         draggable: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplayspeed: 200,
+        autoplayspeed: 500,
         arrows: false,
     };
 
@@ -22,7 +22,8 @@ const Intro = () => {
     <section className={["sections", styles.introSection].join(' ')} id="intro">
         <div className="backgrounds" id="vIntroBg">
             <div className={styles.introBgBox}>
-                <img src={process.env.PUBLIC_URL + "imgs/about/about_test.jpg"} alt="온어스에 대하여" className={styles.introBgImg} />
+                {/* <img src={"https://lichrich.github.io/onus-page/" + "imgs/about/about_test.jpg"} alt="온어스에 대하여" className={styles.introBgImg} /> */}
+                <img src={process.env.PUBLIC_URL + "/imgs/about/about_test.jpg"} alt="온어스에 대하여" className={styles.introBgImg} />
             </div>
         </div>
         <div className={["containers", styles.introContainer].join(' ')}>

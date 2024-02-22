@@ -25,40 +25,60 @@ export default function Home() {
                     <Slider {...carousel_settings}>
                         <div className={styles.carouselItem}>
                             <div className={styles.introBgBox}>
+                                {/* <img
+                                    src={"https://lichrich.github.io/onus-page/" + "imgs/home/home_bg0.jpg"}
+                                    alt="온어스메인"
+                                    className={styles.introBgImg}/> */}
                                 <img
-                                    src={process.env.PUBLIC_URL + "imgs/home/home_bg0.jpg"}
+                                    src={process.env.PUBLIC_URL + "/imgs/home/home_bg0.jpg"}
                                     alt="온어스메인"
                                     className={styles.introBgImg}/>
                             </div>
                         </div>
                         <div className={styles.carouselItem}>
                             <div className={styles.introBgBox}>
+                                {/* <img
+                                    src={"https://lichrich.github.io/onus-page/" + "imgs/home/home_bg1.jpg"}
+                                    alt="온어스메인"
+                                    className={styles.introBgImg}/> */}
                                 <img
-                                    src={process.env.PUBLIC_URL + "imgs/home/home_bg1.jpg"}
+                                    src={process.env.PUBLIC_URL + "/imgs/home/home_bg1.jpg"}
                                     alt="온어스메인"
                                     className={styles.introBgImg}/>
                             </div>
                         </div>
                         <div className={styles.carouselItem}>
                             <div className={styles.introBgBox}>
+                                {/* <img
+                                    src={"https://lichrich.github.io/onus-page/" + "imgs/home/home_bg2.jpg"}
+                                    alt="온어스메인"
+                                    className={styles.introBgImg}/> */}
                                 <img
-                                    src={process.env.PUBLIC_URL + "imgs/home/home_bg2.jpg"}
+                                    src={process.env.PUBLIC_URL + "/imgs/home/home_bg2.jpg"}
                                     alt="온어스메인"
                                     className={styles.introBgImg}/>
                             </div>
                         </div>
                         <div className={styles.carouselItem}>
                             <div className={styles.introBgBox}>
+                                {/* <img
+                                    src={"https://lichrich.github.io/onus-page/" + "imgs/home/home_bg3.jpg"}
+                                    alt="온어스메인"
+                                    className={styles.introBgImg}/> */}
                                 <img
-                                    src={process.env.PUBLIC_URL + "imgs/home/home_bg3.jpg"}
+                                    src={process.env.PUBLIC_URL + "/imgs/home/home_bg3.jpg"}
                                     alt="온어스메인"
                                     className={styles.introBgImg}/>
                             </div>
                         </div>
                         <div className={styles.carouselItem}>
                             <div className={styles.introBgBox}>
+                                {/* <img
+                                    src={"https://lichrich.github.io/onus-page/" + "imgs/home/home_bg4.jpg"}
+                                    alt="온어스메인"
+                                    className={styles.introBgImg}/> */}
                                 <img
-                                    src={process.env.PUBLIC_URL + "imgs/home/home_bg4.jpg"}
+                                    src={process.env.PUBLIC_URL + "/imgs/home/home_bg4.jpg"}
                                     alt="온어스메인"
                                     className={styles.introBgImg}/>
                             </div>

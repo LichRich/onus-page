@@ -46,6 +46,10 @@ export default function Header({menuToggle, menuToggler}) {
                     src={process.env.PUBLIC_URL + '/imgs/onus_logo.png'}
                     alt="logo"
                     id='logo'/>
+                {/* <img
+                    src={"https://lichrich.github.io/onus-page" + '/imgs/onus_logo.png'}
+                    alt="logo"
+                    id='logo'/> */}
             </Link>
         </div>
         <div className="menu-box">

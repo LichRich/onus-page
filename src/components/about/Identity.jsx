@@ -14,10 +14,11 @@ export default function Identity({setter}) {
     <section className={["sections", styles.identitySection].join(' ')} id="identity" ref={yRef}>
         <div className={["containers", styles.identityContainer].join(' ')}>
             <div className={styles.identityTitleBox}>
-                <h2 className={styles.identityTitle}>아이덴티티</h2>
+                <h2 className={styles.identityTitle}>IDENTITY</h2>
             </div>
             <div className={styles.contentsBox}>
-                <img id={styles.identityImg} src={process.env.PUBLIC_URL + "imgs/about/identity.png"} alt="아이덴티티" className={styles.identity} />
+                {/* <img id={styles.identityImg} src={"https://lichrich.github.io/onus-page/" + "imgs/about/identity.png"} alt="아이덴티티" className={styles.identity} /> */}
+                <img id={styles.identityImg} src={process.env.PUBLIC_URL + "/imgs/about/identity.png"} alt="아이덴티티" className={styles.identity} />
             </div>
         </div>
     </section>

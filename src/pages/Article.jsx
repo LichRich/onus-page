@@ -21,6 +21,7 @@ export default function Article({db}) {
             const q = query(articleRef, orderBy("date", "desc"));
             const documentSnapshots = await getDocs(q);
             setDatas(documentSnapshots.docs.map((doc) => ({
+                id: doc.id,
                 ...doc.data()
             })))
         };
@@ -53,15 +54,7 @@ export default function Article({db}) {
     };
 
     const goArticleDetail = (d) => {
-        navigate("/detail", {
-            state: {
-                title: d.title,
-                content: d.contents,
-                date: d.date,
-                imgs: d.imgs,
-                link: d.link
-            }
-        })
+        navigate("/articleDetail?id="+d);
     }
 
   return (
@@ -103,7 +96,7 @@ export default function Article({db}) {
                                         title={data.title}
                                         date={data.date}
                                         category={data.category}
-                                        handler={() => goArticleDetail(data)} />
+                                        handler={() => goArticleDetail(data.id)} />
                                 );
                             })
                         }

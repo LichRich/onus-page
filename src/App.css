@@ -231,11 +231,17 @@ main {
     flex-direction: column;
     width: 40%;
     height: 100%;
-    justify-content: space-around;
+    justify-content: center;
 }
-.footer-addr, .footer-phone, .footer-email {
+.footer-addr, .footer-phone {
     font-size: 11pt;
     font-weight: 600;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 80px;
+}
+.footer-phone span {
+    padding-left: 50px;
 }
 .footer-sns {
     display: flex;

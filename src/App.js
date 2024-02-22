@@ -1,6 +1,6 @@
 import logo from './logo.svg';
-import { firestore } from './FirebaseConfig';
-import { Route, Routes } from 'react-router-dom';
+import { firestore, auth, apiKey } from './FirebaseConfig';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
@@ -13,14 +13,58 @@ import ArticleDetail from './pages/ArticleDetail';
 import Contact from './pages/Contact';
 import ProjectDetail from './pages/ProjectDetail';
 import { useState } from 'react';
+import { signOut } from 'firebase/auth';
+import Login from './pages/Login';
 
 function App() {
 
   const [menuToggle, setMenuToggle] = useState(false);
+  const [userObj, setUserObj] = useState({});
+
+  // "project/" or "article/"
+  const [docDir, setDocDir] = useState("");  
+  const [post, setPost] = useState();
 
   const menuToggleHandler = () => {
     menuToggle ? setMenuToggle(false) : setMenuToggle(true);
   }
+  const navigate = useNavigate();
+
+  const loginHander = (user) => {
+    setUserObj(user);
+    // navigate('/admin');
+    navigate('/');
+  }
+
+  const logoutHandler = () => {
+    if(window.confirm("로그아웃하시겠습니까?")) {
+      signOutFunction();
+    } else {
+
+    }
+  }
+
+  const signOutFunction = async () => {
+    await signOut(auth);
+    setUserObj({});
+    navigate('/');
+  }
+
+  const _session_key = `firebase:authUser:${apiKey}:[DEFAULT]`;
+  const isLoggedIn = sessionStorage.getItem(_session_key) ? true : false;
+
+
+  const setDirHandler = (dir) => {
+    setDocDir(dir);
+  }
+
+  const setPostHandler = (item) => {
+      setPost(item);
+      if(item !== undefined) {
+        navigate("/board");
+      }
+  }
+
 
   return (
     <>
@@ -30,11 +74,12 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path='/about' element={<About db={firestore} />} />
         <Route path='/business' element={<Business db={firestore} />} />
-        <Route path='/project' element={<Project db={firestore} />} />
-        <Route path='/article' element={<Article db={firestore} />} />
-        <Route path='/articleDetail' element={<ArticleDetail />} />
-        <Route path='/projectDetail' element={<ProjectDetail />} />
+        <Route path='/project' element={<Project db={firestore} isLoggedIn={isLoggedIn} />} />
+        <Route path='/article' element={<Article db={firestore} isLoggedIn={isLoggedIn} />} />
+        <Route path='/articleDetail' element={<ArticleDetail db={firestore} isLoggedIn={isLoggedIn} />} />
+        <Route path='/projectDetail' element={<ProjectDetail db={firestore} isLoggedIn={isLoggedIn} />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/login' element={<Login loginHandler={loginHander} />} />
       </Routes>
 
       <Footer />

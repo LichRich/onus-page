@@ -1,15 +1,37 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import styles from '../css/article/Detail.module.css'
+import { useState } from 'react';
+import { doc, getDoc } from 'firebase/firestore';
+import { firestore } from '../FirebaseConfig';
+import { useEffect } from 'react';
 
 export default function ArticleDetail() {
 
     let location = useLocation();
-    const title = location.state.title;
-    const content = location.state.content;
-    const date = location.state.date;
-    const imgs = location.state.imgs;
-    const link = location.state.link;
+    const search = location.search;
+    const params = new URLSearchParams(search);
+    const keyword = params.get('id');
+
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState("");
+    const [date, setDate] = useState("");
+    const [imgs, setImgs] = useState([]);
+    const [link, setLink] = useState("");
+
+    const articleRef = doc(firestore, "article", keyword);
+
+    useEffect(() => {
+        const getArticle = async () => {
+            const docSnapshot = await getDoc(articleRef);
+            setTitle(docSnapshot.data().title);
+            setContent(docSnapshot.data().contents);
+            setDate(docSnapshot.data().date);
+            setImgs(docSnapshot.data().imgs);
+            setLink(docSnapshot.data().link);
+        };
+        getArticle();
+    },[])
 
   return (
     <section className={styles.detailSection}>

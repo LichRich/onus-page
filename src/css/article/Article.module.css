@@ -15,6 +15,7 @@
     position: relative;
     margin: auto;
     margin-top: 60px;
+    margin-bottom: 0;
     width: 75%;
     text-align: center;
 }
@@ -92,6 +93,14 @@
     flex-wrap: wrap;
 }
 
+@media (min-width: 1900px) {
+    .titleBox {
+        margin-top: 0;
+    }
+    .title {
+        margin: 0;
+    }
+}
 @media (max-width: 720px) {
     .articleTitleBox {
         height: 150px;

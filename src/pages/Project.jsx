@@ -38,7 +38,7 @@ export default function Project({db, postSet}) {
         const fetchData = async () => {
             const projects = query(projectRef, orderBy("projectIdx", "asc"));
             const documentSnapshots = await getDocs(projects);
-            setList(documentSnapshots.docs.map((doc) => ({...doc.data()})));
+            setList(documentSnapshots.docs.map((doc) => ({id: doc.id, ...doc.data()})));
         }
         fetchData();
     }, []);
@@ -57,7 +57,7 @@ export default function Project({db, postSet}) {
         
         if(list.length > 0) {
             return (
-                <ProjectCard data={list} handler={postSet} />
+                <ProjectCard data={list} />
             );
         } else {
             return (

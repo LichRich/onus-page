@@ -10,6 +10,9 @@
     overflow: hidden;
     z-index: -99;
 }
+.introBgImg {
+    height: 100%;
+}
 .introContainer {
     display: flex;
     flex-direction: column;
