@@ -27,14 +27,17 @@ export default function Header({menuToggle, menuToggler}) {
     const [linkItems, setLinkItems] = useState([
         {
             name: "dogam",
+            address: "/",
             text: "도감 프로젝트"
         },
         {
             name: "magazine",
+            address: "/article",
             text: "도감 매거진"
         },
         {
             name: "contact",
+            address: "/contact",
             text: "문의하기"
         }
     ])

@@ -191,6 +191,108 @@ main {
     color: #fff;
 }
 
+/********************************************
+
+                    Edit page
+
+***********************************************/
+.editSection {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.editContainer {
+    width: 100%;
+    min-height: 90%;
+    margin: auto;
+    margin-top: 90px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 2px gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+.titleBox {
+    width: 94%;
+    display: flex;
+    margin: 10px 10px 10px 10px;
+    justify-content: center;
+}
+.inputTitle {
+    border: 0;
+    box-shadow: 0 0 2px 1px gray;
+    font-size: 20px;
+    width: 100%;
+    padding: 10px;
+}
+
+.thumbnailBox {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    margin-bottom: 10px;
+    margin-left: 5%;
+}
+.thumbnailBox label {
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.editorBox {
+    height: 100%;
+    width: 95%;
+}
+
+.ck.ck-editor, .ck.ck-editor__main, .ck.ck-content {
+    min-height: 500px;
+}
+
+.ck.ck-content img {
+    max-width: 300px;
+    max-height: 400px;
+}
+
+.buttonBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editBtns {
+    padding: 5px 15px;
+    font-size: 12pt;
+    font-weight: 600;
+    margin: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btnEditSubmit {
+    border: 3px solid #004435;
+    color: #fff;
+    background-color: #004435;
+}
+.btnEditSubmit:hover {
+    color: #004435;
+    background-color: #fff;
+}
+.btnEditCancel {
+    border: 3px solid #ff5555;
+    color: #ff5555;
+    background-color: #fff;
+}
+.btnEditCancel:hover {
+    color: #fff;
+    background-color: #ff5555;
+}
+
 
 
 /********************************************

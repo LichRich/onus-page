@@ -7,21 +7,9 @@
     align-items: center;
     border-bottom: 2px solid #004435;
 }
-.titleBox p {
-    margin-top: 20px;
-}
 .title {
     font-size: 18pt;
     font-weight: 800;
-    margin-bottom: 0;
-}
-.date {
-    width: 80%;
-    text-align: end;
-    font-size: 15pt;
-    font-weight: 600;
-    color: #555;
-    margin-bottom: 20px;
 }
 
 .contentsBox {
@@ -31,18 +19,14 @@
 }
 .imgBox {
    width: 100%; 
-   text-align: center;
+   display: flex;
+   justify-content: center;
 }
-.linkBox {
-    width: 80%;
-    margin: auto;
-}
-
-.contentsBox div {
-    text-align: center;
+.img {
+    width: 100%;
 }
 .contents {
-    text-align: start !important;
+    padding: 20px 0;
 }
 
 .btnBox {

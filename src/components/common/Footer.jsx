@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default function Footer() {
+export default function Footer({isLoggedIn, handler}) {
+
   return (
       <div className='footer'>
           <div className='footer-left'>
@@ -31,7 +32,11 @@ export default function Footer() {
           </div>
           <div className='footer-logo-box'>
             {/* <img className="footer-logo" src={"https://lichrich.github.io/onus-page" + '/imgs/onus_logo.png'} alt='logo' /> */}
-            <img className="footer-logo" src={process.env.PUBLIC_URL + '/imgs/onus_logo.png'} alt='logo' />
+            { isLoggedIn ? 
+              <img className="footer-logo" src={process.env.PUBLIC_URL + '/imgs/onus_logo.png'} alt='logo' style={{cursor:"pointer"}} onClick={handler} />
+              :
+              <img className="footer-logo" src={process.env.PUBLIC_URL + '/imgs/onus_logo.png'} alt='logo' />
+            }
           </div>
       </div>
   )
