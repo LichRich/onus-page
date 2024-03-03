@@ -15,8 +15,8 @@ export default function ProjectDetail({db, isLoggedIn}) {
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [imgs, setImgs] = useState([]);
-  const [pIdx, setPIdx] = useState(0);
+  const [imgs, setImgs] = useState("");
+  const [pIdx, setPIdx] = useState("");
 
   const projectRef = doc(db, "project", keyword);
 
@@ -25,8 +25,8 @@ export default function ProjectDetail({db, isLoggedIn}) {
       const docSnapshot = await getDoc(projectRef);
       setTitle(docSnapshot.data().title);
       setContent(docSnapshot.data().contents);
-      setImgs(docSnapshot.data().imgs);
-      setPIdx(docSnapshot.data().projectIdx);
+      setImgs(docSnapshot.data().thumbnail);
+      setPIdx(docSnapshot.id);
     };
     getProject();
   })
@@ -74,11 +74,12 @@ export default function ProjectDetail({db, isLoggedIn}) {
             </div>
             <div className={styles.contentsBox}>
                 <div className={styles.imgBox}>
-                    {
+                    {/* {
                         imgs.map((item, idx) => {
                             return (<img key={idx} src={item} alt="article img" className={styles.img} />);
                         })
-                    }
+                    } */}
+                    <img src={imgs} alt="article img" className={styles.img} />
                 </div>
                 <div className={styles.contents} dangerouslySetInnerHTML={{__html: content}}></div>
             </div>

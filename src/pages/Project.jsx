@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import styles from '../css/project/Project.module.css';
 import ProjectCard from "../components/project/ProjectCard";
 
-export default function Project({db, postSet}) {
+export default function Project({db, isLoggedIn}) {
 
     const ITEM_LIMIT = 8;
 
@@ -36,7 +36,7 @@ export default function Project({db, postSet}) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const projects = query(projectRef, orderBy("projectIdx", "asc"));
+            const projects = query(projectRef, orderBy("id", "asc"));
             const documentSnapshots = await getDocs(projects);
             setList(documentSnapshots.docs.map((doc) => ({id: doc.id, ...doc.data()})));
         }
@@ -66,6 +66,19 @@ export default function Project({db, postSet}) {
         }
     }
 
+    const goEdit = () => {
+        navigate("/edit?dir=project");
+    }
+
+    const showBtn = () => {
+        if(isLoggedIn) {
+            return(
+                <button className={styles.editBtn} onClick={() => goEdit()}>글쓰기</button>
+            )
+        }
+        return null;
+    }
+
   return (
     <section className={["sections",styles.projectSection].join(" ")}>
         <div className={styles.container}>
@@ -73,6 +86,7 @@ export default function Project({db, postSet}) {
                 <div className={styles.titleBg}></div>
                 <p className={styles.title}>PROJECT</p>
             </div>
+            {showBtn()}
             <div className={styles.contentsList}>
                 {getCards()}
             </div>

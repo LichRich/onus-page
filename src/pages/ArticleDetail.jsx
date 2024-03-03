@@ -18,7 +18,7 @@ export default function ArticleDetail({isLoggedIn}) {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [date, setDate] = useState("");
-    const [imgs, setImgs] = useState([]);
+    const [imgs, setImgs] = useState("");
     const [link, setLink] = useState("");
     const [category, setCategory] = useState("");
 
@@ -31,7 +31,7 @@ export default function ArticleDetail({isLoggedIn}) {
             setCategory(docSnapshot.data().category);
             setContent(docSnapshot.data().contents);
             setDate(docSnapshot.data().date);
-            setImgs(docSnapshot.data().imgs);
+            setImgs(docSnapshot.data().thumbnail);
             setLink(docSnapshot.data().link);
         };
         getArticle();
@@ -55,7 +55,7 @@ export default function ArticleDetail({isLoggedIn}) {
                 })
             });
             await deleteDoc(doc(firestore, "article", keyword));
-            navigate("/aritlce");
+            navigate("/article");
         }
     }
 
@@ -103,20 +103,20 @@ export default function ArticleDetail({isLoggedIn}) {
             <div className={styles.contentsBox}>
                 { category !== "youtube" ?
                     <div className={styles.imgBox}>
-                        {
-                            imgs.map((item, idx) => {
-                                return (<img key={idx} src={item} alt="article img" className={styles.img} />);
-                            })
-                        }
+                        <img src={imgs} alt="article img" className={styles.img} />
                     </div>
                     :
                     showYoutube()
                 }
                 <div className={styles.contents} dangerouslySetInnerHTML={{__html: content}}></div>
             </div>
-            <div className={styles.linkBox}>
-                <p className={styles.link}>출처: {link}</p>
-            </div>
+            { category === "youtube" ?
+                <div className={styles.linkBox}>
+                    <p className={styles.link}>출처: {link}</p>
+                </div>
+                :
+                <div className={styles.linkBox}></div>
+            }
             {showBtn()}
         </div>
     </section>

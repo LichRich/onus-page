@@ -30,10 +30,12 @@
 }
 .tabMenuBox {
     display: flex;
-    width: 100%;
+    width: 480px;
     height: 50px;
     justify-content: center;
-    margin-top: 30px;
+    margin: 20px auto;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #004435;
 }
 .tabMenuList {
     list-style: none;

@@ -4,7 +4,10 @@
 }
 
 .articleContainer {
+    position: relative;
     display: flex;
+    width: 80%;
+    margin: auto;
     flex-direction: column;
     min-height: 100vh;
     justify-content: center;
@@ -42,6 +45,27 @@
     font-weight: 800;
     margin-bottom: 0;
 }
+
+.editBtn {
+    position: absolute;
+    right: 50px;
+    top: 120px;
+    width: 100px;
+    height: 40px;
+    font-size: 14pt;
+    font-weight: 600;
+    color: #004435;
+    border: 3px solid #004435;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.editBtn:hover {
+    background-color: #004435;
+    color: #fff;
+}
+
+
 .tabMenuBox {
     display: flex;
     width: 100%;
@@ -82,7 +106,6 @@
     width: 100%;
     min-height: 500px;
     justify-content: center;
-    align-items: center;
 }
 
 .cardList {

@@ -2,9 +2,9 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 350px;
-    height: 320px;
-    margin: 0 20px;
+    width: 30%;
+    height: 25%;
+    margin: 10px;
     justify-content: center;
     align-items: center;
     cursor: pointer;

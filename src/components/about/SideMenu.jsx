@@ -8,17 +8,17 @@ export default function SideMenu({now, handler}) {
         {
             name: "intro",
             address: "#intro",
-            text: "온어스 소개"
+            text: "INTRODUCE"
         },
         {
             name: "identity",
             address: "#identity",
-            text: "아이덴티티"
+            text: "IDENTITY"
         },
         {
             name: "history",
             address: "#history",
-            text: "연보"
+            text: "HISTORY"
         },
     ])
 

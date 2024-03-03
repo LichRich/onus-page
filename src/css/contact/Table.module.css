@@ -1,0 +1,50 @@
+.table {
+    width: 100%;
+    margin-top: 30px;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+.tableHead th {
+    height: 30px;
+    font-size: 15pt;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #004435;
+}
+.idxCategory, .idxEmail {
+    width: 200px;
+}
+.idxName {
+    width: 150px;
+}
+
+.tableBody tr:first-child:hover {
+    cursor: default;
+    background-color: #fff !important;
+}
+.blank {
+    height: 20px !important;
+    padding: 0 !important;
+}
+.tableBody tr:hover {
+    margin-top: 20px;
+    background-color: #eaeaea;
+    cursor: pointer;
+}
+.tableBody tr td {
+    padding: 10px 0;
+    font-size: 14pt;
+    height: 30px;
+}
+.category, .name, .email {
+    text-align: center;
+    width: 10%;
+}
+.content {
+    width: 40%;
+}
+.content {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

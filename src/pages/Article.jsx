@@ -6,7 +6,7 @@ import ArticleCard from "../components/article/ArticleCard";
 import styles from '../css/article/Article.module.css';
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 
-export default function Article({db}) {
+export default function Article({db, isLoggedIn}) {
 
     const [currentTab, setCurrentTab] = useState(0);
     const [datas, setDatas] = useState([]);
@@ -57,6 +57,19 @@ export default function Article({db}) {
         navigate("/articleDetail?id="+d);
     }
 
+    const showBtn = () => {
+        if(isLoggedIn) {
+            return(
+                <button className={styles.editBtn} onClick={() => goEdit()}>글쓰기</button>
+            )
+        }
+        return null;
+    }
+
+    const goEdit = () => {
+        navigate("/edit?dir=article");
+    }
+
   return (
     <main>
         <section className={["sections", styles
@@ -67,6 +80,7 @@ export default function Article({db}) {
                     <div className={styles.titleBg}></div>
                     <p className={styles.title}>ARTICLE</p>
                 </div>
+                {showBtn()}
                 <div className={styles.tabMenuBox}>
                     <ul className={styles.tabMenuList}>
                         {
@@ -92,7 +106,7 @@ export default function Article({db}) {
                                 return (
                                     <ArticleCard
                                         key={idx}
-                                        thumbnail={data.imgs[0]}
+                                        thumbnail={data.thumbnail}
                                         title={data.title}
                                         date={data.date}
                                         category={data.category}

@@ -28,11 +28,11 @@ export default function Header({menuToggle, menuToggler}) {
         {
             name: "dogam",
             address: "/",
-            text: "도감 프로젝트"
+            text: "픽키지"
         },
         {
             name: "magazine",
-            address: "/article",
+            address: "https://firebasestorage.googleapis.com/v0/b/onus-page.appspot.com/o/magazine%2F%EB%8F%84%EA%B3%A0%EB%8F%84%EA%B0%90%202022%20-%20DOGO%EC%98%A8%EC%B2%9C.pdf?alt=media&token=5ffef638-06dc-497a-a062-2453e8058617",
             text: "도감 매거진"
         },
         {

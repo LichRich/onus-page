@@ -15,7 +15,7 @@ export default function ProjectCard({data}) {
             data.map((item) => {
                 return (
                     <div key={item.title} className={styles.imgBox} onClick={() => goProjectDetail(item.id)}>
-                        <img src={item.imgs[0]} className={styles.cardThumbnail} alt="프로젝트 이미지" />
+                        <img src={item.thumbnail} className={styles.cardThumbnail} alt="프로젝트 이미지" />
                     </div>
                 )
             })

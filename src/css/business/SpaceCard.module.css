@@ -1,35 +1,70 @@
 .spaceCard {
+    position: relative;
     display: flex;
     width: 100%;
     height: 480px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .spaceImgBox {
+    position: absolute;
     display: flex;
-    width: 360px;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+    z-index: -99;
 }
 .imgBox {
-    width: 360px;
+    width: 100%;
+    height: 480px;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: -99;
+}
+.spaceImgBox::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -9;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.spaceCard:hover .spaceImgBox::after,
+.spaceCard:hover .contentsBox {
+    opacity: 1;
 }
 .carouselItem {
+    position: relative;
     display: flex;
-    width: 360px;
+    width: 100%;
     height: 100%;
     text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 .spaceImg {
-    width: 360px;
+    width: 100%;
+    height: 480px;
     margin: auto;
 }
 
 .spaceContentBox {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 80%;
+    margin: auto;
     justify-content: center;
-    align-items: flex-end;
+    /* align-items: center; */
+}
+.contentsBox {
+    opacity: 0;
+    color: #fff;
+    transition: all 0.3s ease;
 }
 .outerBox {
     display: flex;
@@ -44,12 +79,14 @@
     font-size: 15pt;
     font-weight: 600;
     color: #004435;
+    display: none;
 }
 .name {
-    font-size: 20pt;
+    font-size: 25pt;
     font-weight: 800;
-    color: #004435;
-    padding-left: 10px;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #004435;
 }
 .addr {
     font-size: 15pt;
@@ -61,4 +98,23 @@
 }
 .right {
     text-align: end;
+}
+
+.spaceLeftBg {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 100, 53, 0.2); */
+    z-index: -99;
+}
+
+.spaceRightBg {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -99;
 }

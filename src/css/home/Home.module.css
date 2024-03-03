@@ -11,14 +11,14 @@
 
 .introContainer {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     width: 100%;
     height: 100%;
 }
 .introMsg {
     margin-top: 20%;
-    padding-right: 15%;
+    padding-left: 100px;
 }
 .introMsgContent {
     color: #fff;

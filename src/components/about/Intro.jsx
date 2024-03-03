@@ -13,6 +13,7 @@ const Intro = () => {
         draggable: false,
         slidesToShow: 1,
         slidesToScroll: 1,
+        pauseOnHover : false,
         autoplay: true,
         autoplayspeed: 500,
         arrows: false,

@@ -22,9 +22,9 @@ export default function About({db}) {
       const scrollHandler = () => {
           const scrollV = window.scrollY;
 
-          if(scrollV >= hisY-50) {
+          if(scrollV >= hisY-150) {
             setFocused("history");
-          } else if(scrollV >= idenY-50) {
+          } else if(scrollV >= idenY-100) {
             setFocused("identity");
           } else {
             setFocused("intro");
@@ -47,7 +47,7 @@ export default function About({db}) {
       <SideMenu handler={onClickHandler} now={focused}/>
       <Intro />
       <Identity setter={idenYSetter} />
-      <History setter={hisYSetter} />
+      <History db={db} setter={hisYSetter} />
     </main>
   )
 }

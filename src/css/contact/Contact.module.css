@@ -1,0 +1,153 @@
+.contactSection {
+    height: fit-content;
+    min-height: 100%;
+}
+
+.contactContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleBox {
+    position: relative;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 0;
+    width: 75%;
+    text-align: center;
+}
+.titleBg {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 150px;
+    height: 20px;
+}
+.titleBg::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 150px;
+    height: 20px;
+    background-color: #C3E0A6;
+    z-index: -9;
+}
+.title {
+    font-size: 30pt;
+    color: #004435;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+.outerBox {
+    width: 75%;
+    margin: auto;
+}
+.innerBox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contentTitle {
+    font-size: 18pt;
+    font-weight: 800;
+    color: #004435;
+}
+.contentBox {
+    min-height: 50px;
+}
+
+.categoryBox {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: auto;
+    padding: 10px 0;
+    border: 2px solid #004435;
+    align-items: center;
+}
+[type="radio"] {
+    accent-color: #004435;
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
+}
+label {
+    font-size: 15pt !important;
+}
+
+.infoBox {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    flex-wrap: wrap;
+    border: 2px solid #004435;
+    padding: 15px 0;
+}
+.infoItems {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+.infoInput {
+    margin-left: 20px;
+    padding: 5px;
+}
+.infoName {
+    margin-left: 30px;
+}
+.detailInfoName {
+    margin-left: 38px;
+}
+
+.typingBox {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+textarea {
+    width: 100%;
+    font-size: 15pt;
+    resize: none;
+}
+
+.btnBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.btnSubmit {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 15pt;
+    font-weight: 600;
+    color: #004435;
+    border: 3px solid #004435;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+.btnSubmit:hover {
+    background-color: #004435;
+    color: #fff;
+}
+
+.btnDelete {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 15pt;
+    font-weight: 600;
+    color: #ff5555;
+    border: 3px solid #ff5555;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+.btnDelete:hover {
+    background-color: #ff5555;
+    color: #fff;
+}

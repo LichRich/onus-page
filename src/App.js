@@ -16,6 +16,7 @@ import { useState } from 'react';
 import { signOut } from 'firebase/auth';
 import Login from './pages/Login';
 import Edit from './pages/Edit';
+import ContactDetail from './pages/ContactDetail';
 
 function App() {
 
@@ -81,6 +82,7 @@ function App() {
         <Route path='/projectDetail' element={<ProjectDetail db={firestore} isLoggedIn={isLoggedIn} />} />
         <Route path='/edit' element={<Edit db={firestore} isLoggedIn={isLoggedIn} />} />
         <Route path='/contact' element={<Contact db={firestore} isLoggedIn={isLoggedIn} />} />
+        <Route path='/contactDetail' element={<ContactDetail db={firestore} isLoggedIn={isLoggedIn} />} />
         <Route path='/login' element={<Login loginHandler={loginHander} />} />
       </Routes>
 

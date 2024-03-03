@@ -1,6 +1,9 @@
 ::-webkit-scrollbar {
     display: none;
 }
+body {
+    background-color: #fff;
+}
 a {
     text-decoration: none;
 }
@@ -205,20 +208,18 @@ main {
 }
 
 .editContainer {
-    width: 100%;
+    width: 80%;
     min-height: 90%;
     margin: auto;
-    margin-top: 90px;
+    margin-top: 100px;
     border: 1px solid #eee;
-    border-radius: 10px;
-    box-shadow: 0 0 5px 2px gray;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #fff;
 }
 .titleBox {
-    width: 94%;
+    width: 95%;
     display: flex;
     margin: 10px 10px 10px 10px;
     justify-content: center;
@@ -229,14 +230,35 @@ main {
     font-size: 20px;
     width: 100%;
     padding: 10px;
+    margin-bottom: 10px;
+}
+.linkBox {
+    width: 95%;
+    display: flex;
+    margin: 10px 10px 10px 10px;
+    justify-content: center;
+}
+.inputLink {
+    border: 0;
+    box-shadow: 0 0 2px 1px gray;
+    font-size: 20px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 .thumbnailBox {
     width: 100%;
     display: flex;
     justify-content: start;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-left: 5%;
+}
+.newsThumbnail {
+    width: 95% !important;
+    display: flex;
+    margin: 0 10px 10px 10px !important;
+    justify-content: center !important;
 }
 .thumbnailBox label {
     margin-right: 20px;
@@ -253,8 +275,8 @@ main {
 }
 
 .ck.ck-content img {
-    max-width: 300px;
-    max-height: 400px;
+    width: 300px;
+    margin: 0 auto;
 }
 
 .buttonBox {

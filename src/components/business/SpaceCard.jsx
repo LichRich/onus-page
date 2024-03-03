@@ -43,10 +43,11 @@ export default function SpaceCard({name, addr, desc, contents, imgs, isRight}) {
                     </div>
                     <div className={styles.contentsBox}>
                         <p className={styles.addr}>{addr}</p>
-                        <p className={styles.contents}>{contents}</p>
+                        <p className={styles.contents} dangerouslySetInnerHTML={{__html: contents}}></p>
                     </div>
                 </div>
             </div>
+            <div className={styles.spaceLeftBg}></div>
         </div>
         :
         <div className={styles.spaceCard}>
@@ -54,7 +55,7 @@ export default function SpaceCard({name, addr, desc, contents, imgs, isRight}) {
                 <div className={styles.outerBox}>
                     <div className={[styles.nameBox, styles.right].join(' ')}>
                         <span className={styles.desc}>{desc}</span>
-                        <span className={styles.name}>{name}</span>
+                        <span className={styles.name}>'{name}'</span>
                     </div>
                     <div className={[styles.contentsBox, styles.right].join(' ')}>
                         <p className={styles.addr}>{addr}</p>
@@ -75,6 +76,7 @@ export default function SpaceCard({name, addr, desc, contents, imgs, isRight}) {
                     </Slider>
                 </div>
             </div>
+            <div className={styles.spaceRightBg}></div>
         </div>
   )
 }
