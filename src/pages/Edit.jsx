@@ -25,7 +25,7 @@ export default function Edit({db}) {
     const [category, setCategory] = useState("");
     const [imgs, setImgs] = useState("");
 
-    const [imgUrl, setImgUrl] = useState("");
+    const [thumbnailUrl, setThumbnailUrl] = useState("");
 
     const [nowTime, setNowTime] = useState(0);
 
@@ -47,8 +47,8 @@ export default function Edit({db}) {
                 setDate(docSnapshot.data().date);
                 setThumbnail(docSnapshot.data().thumbnail);
                 setContents(docSnapshot.data().contents);
-                setImgs(docSnapshot.data().thumbnail);
-                setImgUrl(docSnapshot.data().thumbnail);
+                setImgs(docSnapshot.data().imgs);
+                setThumbnailUrl(docSnapshot.data().thumbnail);
             }
             getPostData();
 
@@ -98,6 +98,7 @@ export default function Edit({db}) {
     }
 
     let uploading = false;
+    let imgsUploading = false;
 
     const thumbnailChangeHandler = (e) => {
         const name = dir + "/" + postId + "/thumbnail.jpg";
@@ -116,11 +117,48 @@ export default function Edit({db}) {
                 .then((snapshot) => {
                     getDownloadURL(snapshot.ref).then((url) => {
                         setThumbnail(""+url);
-                        setImgUrl(url);
+                        setThumbnailUrl(url);
                     });
                 })
             }
         }
+    }
+
+    const imgsUploadHandler = (e) => {
+
+        imgsUploading = true;
+
+        if(e.currentTarget.files[0] !== undefined) {
+
+            let filesLen = e.currentTarget.files.length;
+
+            let imgsArr = [...imgs];
+
+            for(const file of e.currentTarget.files) {
+                let name = dir + "/" + postId + "/imgs/" + `${file.name}`;
+                let imgRef = ref(storage, name);
+
+                if(file.size > 5*1024*1024) {
+                    alert("5MB 이하의 이미지만 가능합니다.");
+                    uploading = false;
+                    e.currentTarget.value = null;
+                    return;
+                } else {
+                    uploadBytes(imgRef, file)
+                    .then((snapshot) => {
+                        getDownloadURL(snapshot.ref).then((url) => {
+                            imgsArr = [...imgsArr, ""+url];
+                            setImgs(imgsArr);
+                            if(imgsArr.length == filesLen) {
+                                imgsUploading = false;
+                            }
+                        })
+                    })
+                }
+            }
+
+        }
+
     }
 
     const uploadDoc = async (e) => {
@@ -128,9 +166,9 @@ export default function Edit({db}) {
 
         // 기존 게시글일 때
         if(keyword !== null) {
-            if((imgUrl.length < 1 && uploading) || (imgUrl.length > 1 && uploading)) {
+            if((thumbnailUrl.length < 1 && uploading) || (thumbnailUrl.length > 1 && uploading) || imgsUploading) {
                 alert("이미지 업로드 중입니다.");
-            } else if(imgUrl.length < 1 && !uploading) {
+            } else if(thumbnailUrl.length < 1 && !uploading) {
                 alert("이미지를 첨부해주세요.");
             } 
             else {
@@ -140,6 +178,7 @@ export default function Edit({db}) {
                         title: title,
                         contents: uploadData.contents,
                         thumbnail: thumbnail,
+                        imgs: imgs,
                     });
                     
                     const listRef = ref(storage, dir + "/" + postId + "/");
@@ -172,9 +211,9 @@ export default function Edit({db}) {
                 alert("내용을 입력해주세요.");
             } 
             else {
-                if(imgUrl.length < 1 && uploading) {
+                if((thumbnailUrl.length < 1 && uploading) || imgsUploading) {
                     alert("이미지 업로드 중입니다.");
-                } else if(imgUrl.length < 1 && !uploading) {
+                } else if(thumbnailUrl.length < 1 && !uploading) {
                     alert("이미지를 첨부해주세요.");
                 } else {
                     try {
@@ -182,7 +221,8 @@ export default function Edit({db}) {
                             id: postId,
                             title: title,
                             contents: uploadData.contents,
-                            thumbnail: thumbnail
+                            thumbnail: thumbnail,
+                            imgs: imgs
                         });
                         const listRef = ref(storage, dir + "/" + postId + "/");
                         listAll(listRef).then((res) => {
@@ -332,7 +372,7 @@ export default function Edit({db}) {
 
         upload() {
             let now = Date.now();
-            let imgName = dir + "/" + postId + "/" + now + ".jpg";
+            let imgName = dir + "/" + postId + "/post/" + now + ".jpg";
 
             return this
                 .loader
@@ -368,8 +408,12 @@ export default function Edit({db}) {
                 <input type="text" className="inputTitle" id="inputTitle" name="title" placeholder="제목:" defaultValue={keyword !== null ? title : ""} onChange={titleChangeHandler} required />
             </div>
             <div className="thumbnailBox">
-                <label htmlFor="thumbnailUpload">이미지: </label>
+                <label htmlFor="thumbnailUpload">썸네일: </label>
                 <input type="file" accept="image/*" id="thumbnailUpload" onChange={thumbnailChangeHandler} />
+            </div>
+            <div className="imgBox">
+                <label htmlFor="imgsUpload">이미지: </label>
+                <input type="file" multiple accept="image/*" id="imgsUpload" onChange={imgsUploadHandler} />
             </div>
             <div className="editorBox">
                 <CKEditor

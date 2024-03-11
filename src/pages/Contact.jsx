@@ -163,7 +163,7 @@ export default function Contact({db, isLoggedIn}) {
                                   className={[styles.contentBox, styles
                                       .categoryBox]
                                       .join(' ')}>
-                                  <label htmlFor='categoryFirst'>
+                                  <label className={styles.radioLabels} htmlFor='categoryFirst'>
                                       <input
                                           type="radio"
                                           name="category"
@@ -171,19 +171,19 @@ export default function Contact({db, isLoggedIn}) {
                                           id='categoryFirst'
                                           className={styles.radioItem}
                                           onChange={handleCategory} required/>행사 기획, 운영</label>
-                                  <label htmlFor='categorySecond'><input
+                                  <label className={styles.radioLabels} htmlFor='categorySecond'><input
                                       type="radio"
                                       name="category"
                                       value="1"
                                       id='categorySecond'
                                       className={styles.radioItem} onChange={handleCategory} required/>교육, 컨설팅</label>
-                                  <label htmlFor='categoryThird'><input
+                                  <label className={styles.radioLabels} htmlFor='categoryThird'><input
                                       type="radio"
                                       name="category"
                                       value="2"
                                       id='categoryThird'
                                       className={styles.radioItem} onChange={handleCategory} required/>사례지 견학</label>
-                                  <label htmlFor='categoryFourth'><input
+                                  <label className={styles.radioLabels} htmlFor='categoryFourth'><input
                                       type="radio"
                                       name="category"
                                       value="3"

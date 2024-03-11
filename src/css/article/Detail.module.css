@@ -92,3 +92,98 @@
     color: #fff;
     background-color: #ff5555;
 }
+
+@media (max-width: 1050px) {
+    .titleBox p {
+        margin-top: 20px;
+    }
+    .title {
+        font-size: 15pt;
+        font-weight: 800;
+        margin-bottom: 0;
+    }
+    .date {
+        width: 80%;
+        text-align: end;
+        font-size: 12pt;
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 20px;
+    }
+    .contentsBox, .linkBox {
+        width: 80%;
+    }
+}
+
+@media (max-width: 780px) {
+    .titleBox {
+        width: 90%;
+        margin: auto;
+        margin-top: 90px;
+    }
+    .titleBox p {
+        margin-top: 0;
+    }
+    .title {
+        font-size: 15pt;
+        font-weight: 800;
+        margin-bottom: 0;
+    }
+    .date {
+        width: 80%;
+        text-align: end;
+        font-size: 12pt;
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 10px;
+    }
+    .contentsBox, .linkBox {
+        width: 90%;
+    }
+    .contents p {
+        margin: 0;
+    }
+    .contents p:first-child {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 700px) {
+    iframe {
+        width: 400px;
+        height: 260px;
+    }
+}
+
+@media (max-width: 500px) {
+    iframe {
+        width: 300px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 300px) {
+    iframe {
+        width: 220px;
+        height: 140px;
+    }
+    .title {
+        font-size: 11pt;
+        font-weight: 800;
+        margin-bottom: 0;
+    }
+    .date {
+        width: 100%;
+        text-align: end;
+        font-size: 9pt;
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 10px;
+    }
+    .contents p {
+        font-size: 9pt;
+    }
+    .linkBox {
+        font-size: 9pt;
+    }
+}

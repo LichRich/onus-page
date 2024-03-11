@@ -40,11 +40,64 @@
     width: 10%;
 }
 .content {
-    width: 40%;
-}
-.content {
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+@media (max-width: 860px) {
+    .idxName {
+        width: 100px;
+    }
+    .idxEmail, .idxCategory {
+        width: 130px;
+    }
+    td {
+        font-size: 12pt !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .blank {
+        display: none;
+    }
+    .table .tableHead tr th {
+        font-size: 12pt;
+    }
+    .idxName {
+        width: 50px;
+    }
+    .idxEmail, .idxCategory {
+        width: 100px;
+    }
+    td {
+        font-size: 9pt !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .table {
+        table-layout: fixed;
+    }
+    .blank {
+        display: none;
+    }
+    .table .tableHead tr th {
+        font-size: 9pt;
+        padding: 0;
+        padding-bottom: 5px;
+    }
+    .idxCategory, .idxName {
+        width: 50px;
+    }
+    .idxEmail {
+        width: 70px;
+    }
+    .email {
+        word-wrap: break-word;
+    }
+    td {
+        font-size: 9pt !important;
+    }
 }

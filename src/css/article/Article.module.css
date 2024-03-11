@@ -116,7 +116,7 @@
     flex-wrap: wrap;
 }
 
-@media (min-width: 1900px) {
+@media (min-width: 1980px) {
     .titleBox {
         margin-top: 0;
     }
@@ -124,6 +124,13 @@
         margin: 0;
     }
 }
+
+@media (max-width: 1250px) {
+    .articleContainer {
+        width: 100%;
+    }
+}
+
 @media (max-width: 720px) {
     .articleTitleBox {
         height: 150px;
@@ -152,23 +159,28 @@
     .menuItem, .activeMenuItem {
         position: relative;
         list-style: none;
-        font-size: 16px;
+        font-size: 13pt;
         height: 40px;
         line-height: 40px;
         padding: 0 15px;
         cursor: pointer;
-        transition: 0.3s;
+        transition: all 0.3s ease;
         margin: 0 5px;
         border-radius: 7px;
         overflow: hidden;
+    }
+    .menuItem:hover, .activeMenuItem {
+        font-size: 18pt;
+        line-height: 40px;
+        font-weight: 900;
+        color: #004435;
     }
 
     .tabContentBox {
         align-items: flex-start;
     }
+
     .cardList {
-        max-width: 480px;
-        height: 100%;
-        padding: 20px 0;
+        width: 100%;
     }
 }

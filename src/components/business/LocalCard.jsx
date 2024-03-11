@@ -15,6 +15,22 @@ export default function LocalCard({name, contents, imgs}) {
         arrows: false,
         pauseOnHover: true,
         cssEase: "linear",
+        className: styles.localSlide,
+
+        responsive: [
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 2
+                }
+            }
+        ]
     };
 
   return (

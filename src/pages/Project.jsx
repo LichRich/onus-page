@@ -32,7 +32,7 @@ export default function Project({db, isLoggedIn}) {
             setPagesCnt();
         }
         getCLength();
-    }, [len]);
+    }, []);
 
     useEffect(() => {
         const fetchData = async () => {

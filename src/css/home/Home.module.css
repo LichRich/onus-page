@@ -2,10 +2,14 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .introBgImg {
     height: 100%;
+    width: 100%;
     z-index: -999;
 }
 
@@ -41,5 +45,33 @@
     100% {
         opacity: 1;
         transform: none;
+    }
+}
+
+@media (max-width: 1460px) {
+    .introContainer {
+        height: 100vh;
+    }
+    .introBgImg {
+        width: auto;
+    }
+    .introMsg {
+        padding: 0;
+        margin: auto;
+    }
+    .introMsgContent {
+        font-size: 18pt;
+    }
+}
+
+@media (max-width: 600px) {
+    .introMsgContent {
+        font-size: 15pt !important;
+    }
+}
+
+@media (max-width: 300px) {
+    .introMsgContent {
+        font-size: 12pt !important;
     }
 }

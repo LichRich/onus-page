@@ -27,7 +27,7 @@ export default function SpaceCard({name, addr, desc, contents, imgs, isRight}) {
                     <Slider {...carousel_settings}>
                         {imgs.map((img, idx) => {
                             return (
-                                <div className={styles.carouselItem}>
+                                <div key={idx} className={styles.carouselItem}>
                                     <img key={idx} src={img} alt='공간운영' className={styles.spaceImg} />
                                 </div>
                             )

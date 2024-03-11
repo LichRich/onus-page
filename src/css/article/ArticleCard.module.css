@@ -141,3 +141,23 @@
     background-color: #004435;
     z-index: -9;
 }
+
+@media (max-width: 910px) {
+    .articleCard {
+        width: 40%;
+        margin: 8px auto;
+    }
+    .articleCard:last-child {
+        margin: 5px 5%;
+    }
+}
+
+@media (max-width: 600px) {
+    .articleCard {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .articleCard:last-child {
+        margin: 5px 0;
+    }
+}

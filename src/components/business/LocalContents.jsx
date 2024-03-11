@@ -14,7 +14,7 @@ export default function LocalContents({db}) {
     useEffect(() => {
         const getItems = async () => {
             // localRef에서 문서들 가져오기 
-            const q = query(localRef, orderBy("localIdx", "desc"));
+            const q = query(localRef, orderBy("localIdx", "asc"));
             const documentSnapshots = await getDocs(q);
             setDatas(documentSnapshots.docs.map((doc) => ({
                 ...doc.data()

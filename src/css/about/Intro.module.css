@@ -4,14 +4,16 @@
     justify-content: center;
 }
 .introBgBox {
-    width: 100%;
-    height: 100%;
-    position: relative;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
-    z-index: -99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .introBgImg {
-    height: 100%;
+    width: 100%;
+    z-index: -999;
 }
 .introContainer {
     display: flex;
@@ -28,4 +30,29 @@
     font-size: 18pt;
     color: #fff;
     font-weight: 600;
+}
+
+@media (max-width: 1460px) {
+    .introBgImg {
+        width: auto;
+        height: 100%;
+    }
+    .introContainer {
+        width: 85%;
+    }
+    .introTitle {
+        font-size: 20pt;
+    }
+    .contents {
+        font-size: 14pt;
+    }
+}
+
+@media (max-width: 500px) {
+    .introTitle {
+        font-size: 15pt;
+    }
+    .contents {
+        font-size: 11pt;
+    }
 }

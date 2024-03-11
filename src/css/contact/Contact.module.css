@@ -151,3 +151,76 @@ textarea {
     background-color: #ff5555;
     color: #fff;
 }
+
+
+@media (max-width: 1080px) {
+    div.outerBox {
+        width: 90%;
+    }
+}
+
+@media (max-width: 850px) {
+    .contentBox {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .radioLabels {
+        width: 45%;
+        margin: 5px;
+    }
+}
+
+@media (max-width: 750px) {
+    .infoBox {
+        flex-direction: column;
+    }
+    .radioLabels {
+        width: 100%;
+    }
+    .infoItems {
+        width: 275px;
+        margin: auto;
+        justify-content: space-between;
+    }
+    .infoInput {
+        padding: 6px;
+    }
+    textarea {
+        font-size: 12pt;
+    }
+}
+@media (max-width: 400px) {
+    .outerBox {
+        width: 95%;
+    }
+    .contentTitle {
+        font-size: 15pt;
+    }
+    .radioLabels {
+        font-size: 12pt !important;
+    }
+    .infoItems {
+        flex-direction: column;
+        width: 90%;
+    }
+    .infoItems label {
+        width: 100px;
+        font-size: 12pt !important;
+    }
+    .infoInput {
+        margin: 8px auto;
+        width: 90%;
+    }
+    textarea {
+        font-size: 11pt;
+    }
+    .btnSubmit {
+        font-size: 12pt;
+    }
+}
+
+@media (max-width: 300px) {
+    div.outerBox {
+        width: 100%;
+    }
+}

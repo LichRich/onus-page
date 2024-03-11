@@ -1,3 +1,7 @@
+.detailSection {
+    min-height: 70vh;
+}
+
 .titleBox {
     margin-top: 100px;
     width: 100%;
@@ -13,34 +17,68 @@
 }
 
 .contentsBox {
-    width: 80%;
-    height: 70vh;
+    width: 90%;
     display: flex;
     margin: auto;
     padding: 20px 0;
+    justify-content: center;
 }
-.imgBox {
-   width: 50%; 
-   height: 100%;
+.thumbnailBox {
+   width: 30%; 
+   height: 70vh;
    display: flex;
    justify-content: center;
+   align-items: start;
 }
-.img {
+.thumbnail {
+    /* width: 100%;
+    height: auto; */
+    width: auto;
     height: 100%;
 }
 .contents {
-    padding: 20px 0;
-    width: 50%;
+    padding: 20px;
+    width: 30%;
+    height: 70vh;
 }
-.contents img {
+/* .contents img {
     width: 500px;
     height: auto;
-}
+} */
 
 .contents figure {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.imgBox {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 70vh;
+}
+.flexBox {
+    display: block;
+}
+.projectSlide {
+    margin: auto 0;
+}
+
+.carouselItem {
+    position: relative;
+    display: flex !important;
+    width: 100%;
+    height: 250px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.projectImg {
+    /* width: 100%; */
+    height: 100%;
+    margin: auto;
 }
 
 .btnBox {
@@ -79,4 +117,69 @@
 .delete:hover {
     color: #fff;
     background-color: #ff5555;
+}
+
+@media (max-width: 1560px) {
+    .detailSection {
+        min-height: 70vh !important;
+    }
+    .contentsBox {
+        flex-wrap: wrap;
+    }
+    .thumbnailBox {
+        width: 45%;
+        height: fit-content;
+        margin: 20px auto;
+    }
+    .thumbnail {
+        width: 100%;
+        height: auto;
+    }
+    .contents {
+        width: 45%;
+        height: fit-content;
+        margin: 20px auto;
+    }
+    .imgBox {
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .projectSlide {
+        width: 40%;
+    }
+}
+
+@media (max-width: 960px) {
+    .thumbnailBox {
+        width: 70%;
+        margin: auto;
+        height: fit-content;
+    }
+    .contents {
+        width: 70%;
+        height: fit-content;
+        margin: auto;
+        text-align: center;
+    }
+    .imgBox {
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .projectSlide {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .titleBox {
+        margin-top: 60px;
+    }
 }

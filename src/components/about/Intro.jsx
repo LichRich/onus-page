@@ -18,14 +18,50 @@ const Intro = () => {
         autoplayspeed: 500,
         arrows: false,
     };
+    const bg_settings = {
+        dots: false,
+        infinite: true,
+        speed: 1000,
+        fade: true,
+        draggable: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        pauseOnHover : false,
+        autoplay: true,
+        autoplayspeed: 1000,
+        arrows: false,
+    };
 
   return (
     <section className={["sections", styles.introSection].join(' ')} id="intro">
-        <div className="backgrounds" id="vIntroBg">
-            <div className={styles.introBgBox}>
-                {/* <img src={"https://lichrich.github.io/onus-page/" + "imgs/about/about_test.jpg"} alt="온어스에 대하여" className={styles.introBgImg} /> */}
-                <img src={process.env.PUBLIC_URL + "/imgs/about/about_test.jpg"} alt="온어스에 대하여" className={styles.introBgImg} />
-            </div>
+        <div className="backgrounds" id="introBg">
+            <Slider {...bg_settings}>
+                <div className={styles.carouselItem}>
+                    <div className={styles.introBgBox}>
+                        <img src={process.env.PUBLIC_URL + "/imgs/about/about_bg0.jpg"} alt="온어스에 대하여" className={styles.introBgImg} />
+                    </div>
+                </div>
+                <div className={styles.carouselItem}>
+                    <div className={styles.introBgBox}>
+                        <img src={process.env.PUBLIC_URL + "/imgs/about/about_bg1.jpg"} alt="온어스에 대하여" className={styles.introBgImg} />
+                    </div>
+                </div>
+                <div className={styles.carouselItem}>
+                    <div className={styles.introBgBox}>
+                        <img src={process.env.PUBLIC_URL + "/imgs/about/about_bg2.jpg"} alt="온어스에 대하여" className={styles.introBgImg} />
+                    </div>
+                </div>
+                <div className={styles.carouselItem}>
+                    <div className={styles.introBgBox}>
+                        <img src={process.env.PUBLIC_URL + "/imgs/about/about_bg3.jpg"} alt="온어스에 대하여" className={styles.introBgImg} />
+                    </div>
+                </div>
+                <div className={styles.carouselItem}>
+                    <div className={styles.introBgBox}>
+                        <img src={process.env.PUBLIC_URL + "/imgs/about/about_bg4.jpg"} alt="온어스에 대하여" className={styles.introBgImg} />
+                    </div>
+                </div>
+            </Slider>
         </div>
         <div className={["containers", styles.introContainer].join(' ')}>
             <div className={styles.introTitleBox}>

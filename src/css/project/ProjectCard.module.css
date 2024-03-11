@@ -1,7 +1,10 @@
 .projectCards {
     display: flex;
-    width: 100%;
+    width: fit-content;
+    margin: 0 auto;
     height: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
     z-index: 5;
 }
 .imgBox {
