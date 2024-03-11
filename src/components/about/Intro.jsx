@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Slider from "react-slick";
 
 import styles from '../../css/about/Intro.module.css';
 
 const Intro = () => {
+
+    const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
+    const resizeTimer = useRef(null);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if(resizeTimer.current !== null) return;
+            resizeTimer.current = setTimeout(() => {
+                resizeTimer.current = null;
+                setBrowserWidth(window.innerWidth);
+            }, 200);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.addEventListener('resize', handleResize);
+        };
+    }, [browserWidth]);
 
     const carousel_settings = {
         dots: false,
@@ -35,6 +52,35 @@ const Intro = () => {
   return (
     <section className={["sections", styles.introSection].join(' ')} id="intro">
         <div className="backgrounds" id="introBg">
+            {browserWidth < 500 ?
+            <Slider {...bg_settings}>
+                <div className={styles.carouselItem}>
+                    <div className={styles.introBgBox}>
+                        <img src={process.env.PUBLIC_URL + "/imgs/about/about_bg0.jpg"} alt="온어스에 대하여" className={styles.introBgImg} />
+                    </div>
+                </div>
+                <div className={styles.carouselItem}>
+                    <div className={styles.introBgBox}>
+                        <img src={process.env.PUBLIC_URL + "/imgs/about/vertical/about_bg1.jpg"} alt="온어스에 대하여" className={styles.introBgImg} />
+                    </div>
+                </div>
+                <div className={styles.carouselItem}>
+                    <div className={styles.introBgBox}>
+                        <img src={process.env.PUBLIC_URL + "/imgs/about/about_bg2.jpg"} alt="온어스에 대하여" className={styles.introBgImg} />
+                    </div>
+                </div>
+                <div className={styles.carouselItem}>
+                    <div className={styles.introBgBox} id={styles.resizeBox}>
+                        <img src={process.env.PUBLIC_URL + "/imgs/about/vertical/about_bg3.jpg"} id={styles.resizeImg} alt="온어스에 대하여" className={styles.introBgImg} />
+                    </div>
+                </div>
+                <div className={styles.carouselItem}>
+                    <div className={styles.introBgBox}>
+                        <img src={process.env.PUBLIC_URL + "/imgs/about/about_bg4.jpg"} alt="온어스에 대하여" className={styles.introBgImg} />
+                    </div>
+                </div>
+            </Slider>
+            :
             <Slider {...bg_settings}>
                 <div className={styles.carouselItem}>
                     <div className={styles.introBgBox}>
@@ -62,6 +108,7 @@ const Intro = () => {
                     </div>
                 </div>
             </Slider>
+            }
         </div>
         <div className={["containers", styles.introContainer].join(' ')}>
             <div className={styles.introTitleBox}>

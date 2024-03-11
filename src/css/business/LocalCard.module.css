@@ -132,10 +132,17 @@
         width: 100%;
         margin: 0;
     }
+    .localSlide {
+        height: 140px;
+    }
     .imgListBox {
-        height: 150px;
+        height: 200px;
     }
     .contents {
         font-size: 11pt;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 17pt;
     }
 }

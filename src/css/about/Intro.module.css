@@ -55,4 +55,11 @@
     .contents {
         font-size: 11pt;
     }
+    #resizeBox {
+        align-items: center !important;
+    }
+    #resizeImg {
+        width: 100% !important;
+        height: 100% !important;
+    }
 }

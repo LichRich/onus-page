@@ -68,6 +68,13 @@
     .introMsgContent {
         font-size: 15pt !important;
     }
+    #resizeBox {
+        align-items: center !important;
+    }
+    #resizeImg {
+        width: 100% !important;
+        height: 100% !important;
+    }
 }
 
 @media (max-width: 300px) {

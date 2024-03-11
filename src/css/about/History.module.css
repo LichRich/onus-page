@@ -82,10 +82,12 @@
         width: 100%;
     }
     .right {
-        margin-left: 0;
+        margin-left: 20px;
+        margin-right: 20px;
     }
     .title {
         text-align: start;
+        margin-left: 20px;
     }
     .dateBox {
         margin: 0;
