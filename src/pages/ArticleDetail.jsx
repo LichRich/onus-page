@@ -96,9 +96,6 @@ export default function ArticleDetail({isLoggedIn}) {
                 <p className={styles.title}>
                     {title}
                 </p>
-                <p className={styles.date}>
-                    {date}
-                </p>
             </div>
             <div className={styles.contentsBox}>
                 { category !== "youtube" ?

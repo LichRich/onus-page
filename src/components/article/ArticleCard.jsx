@@ -12,9 +12,6 @@ export default function ArticleCard({thumbnail, title, date, category, handler})
               <div className={styles.titleBox}>
                   <p className={styles.title}>{title}</p>
               </div>
-              <div className={styles.dateBox}>
-                  <p className={styles.date}>{date}</p>
-              </div>
           </div>
           <div className={styles.bglt}></div>
           <div className={styles.bgrt}></div>

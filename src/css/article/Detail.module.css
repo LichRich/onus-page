@@ -9,11 +9,13 @@
 }
 .titleBox p {
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 .title {
-    font-size: 18pt;
+    font-size: 25pt;
     font-weight: 800;
     margin-bottom: 0;
+    font-family: "Noto Sans KR";
 }
 .date {
     width: 80%;
@@ -22,6 +24,7 @@
     font-weight: 600;
     color: #555;
     margin-bottom: 20px;
+    font-family: "Noto Sans KR";
 }
 
 .contentsBox {
@@ -48,6 +51,7 @@
 }
 .contents {
     text-align: start !important;
+    font-family: "Noto Sans KR";
 }
 .contents figure {
     display: flex;

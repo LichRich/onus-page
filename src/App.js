@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import { firestore, auth, apiKey } from './FirebaseConfig';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
@@ -17,6 +16,9 @@ import { signOut } from 'firebase/auth';
 import Login from './pages/Login';
 import Edit from './pages/Edit';
 import ContactDetail from './pages/ContactDetail';
+import Comming from './pages/Comming';
+import Magazine from './pages/Magazine';
+import Pickage from './pages/Pickage';
 
 function App() {
 
@@ -24,7 +26,7 @@ function App() {
   const [userObj, setUserObj] = useState({});
 
   // "project/" or "article/"
-  const [docDir, setDocDir] = useState("");  
+  const [docDir, setDocDir] = useState("");
   const [post, setPost] = useState();
 
   const menuToggleHandler = () => {
@@ -84,6 +86,8 @@ function App() {
         <Route path='/contact' element={<Contact db={firestore} isLoggedIn={isLoggedIn} />} />
         <Route path='/contactDetail' element={<ContactDetail db={firestore} isLoggedIn={isLoggedIn} />} />
         <Route path='/login' element={<Login loginHandler={loginHander} />} />
+        <Route path='/pickage' element={<Pickage />} />
+        <Route path='/magazine' element={<Magazine />} />
       </Routes>
 
       <Footer isLoggedIn={isLoggedIn} handler={logoutHandler} />

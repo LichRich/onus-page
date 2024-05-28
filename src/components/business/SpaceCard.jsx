@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Slider from "react-slick";
 
 import styles from '../../css/business/SpaceCard.module.css';
 
-export default function SpaceCard({name, addr, desc, contents, imgs, isRight}) {
+export default function SpaceCard({setter, name, addr, desc, contents, imgs, isRight, bw}) {
+
+    let yRef = useRef();
+
+    useEffect(() => {
+        const y = yRef.current.offsetTop;
+        setter(y);
+    }, [bw])
 
     const carousel_settings = {
         dots: false,
@@ -21,7 +28,7 @@ export default function SpaceCard({name, addr, desc, contents, imgs, isRight}) {
 
   return (
         !isRight ?
-        <div className={styles.spaceCard}>
+        <div className={styles.spaceCard} ref={yRef}>
             <div className={styles.spaceImgBox}>
                 <div className={styles.imgBox}>
                     <Slider {...carousel_settings}>
@@ -50,7 +57,7 @@ export default function SpaceCard({name, addr, desc, contents, imgs, isRight}) {
             <div className={styles.spaceLeftBg}></div>
         </div>
         :
-        <div className={styles.spaceCard}>
+        <div className={styles.spaceCard} ref={yRef}>
             <div className={styles.spaceContentBox}>
                 <div className={styles.outerBox}>
                     <div className={[styles.nameBox, styles.right].join(' ')}>

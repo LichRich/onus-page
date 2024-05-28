@@ -148,7 +148,6 @@ export default function Contact({db, isLoggedIn}) {
                     .join(' ')}>
                 <div className={styles.contactContainer}>
                     <div className={styles.titleBox}>
-                        <div className={styles.titleBg}></div>
                         <p className={styles.title}>CONTACT</p>
                     </div>
                     {

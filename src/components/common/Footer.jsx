@@ -4,6 +4,7 @@ export default function Footer({isLoggedIn, handler}) {
 
   return (
       <div className='footer'>
+        <div className='footer-container'>
           <div className='footer-left'>
             <div className='footer-name-box'>
               <p className='footer-name'>사회적협동조합 온어스</p>
@@ -38,6 +39,7 @@ export default function Footer({isLoggedIn, handler}) {
               <img className="footer-logo" src={process.env.PUBLIC_URL + '/imgs/onus_logo.png'} alt='logo' />
             }
           </div>
+        </div>
       </div>
   )
 }

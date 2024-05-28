@@ -17,6 +17,7 @@
     width: 60%;
     text-align: end;
     color: #fff;
+    font-family: "Noto Sans KR";
     font-weight: 900;
     font-size: 25pt;
 }
@@ -31,6 +32,7 @@
     display: flex;
 }
 .historyItems p {
+    font-family: "Noto Sans KR";
     font-size: 15pt;
     font-weight: 600;
     margin: 10px 0;

@@ -15,14 +15,13 @@
 
 .introContainer {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
-    width: 100%;
+    width: 70%;
     height: 100%;
+    margin: auto;
 }
 .introMsg {
-    margin-top: 20%;
-    padding-left: 100px;
+    margin-top: 30%;
 }
 .introMsgContent {
     color: #fff;
@@ -32,9 +31,13 @@
 }
 .introMsgContent:first-child {
     font-size: 23pt;
+    font-family: "Noto Sans KR";
+    font-weight: 400;
 }
 .introMsgContent:last-child {
     font-size: 26pt;
+    font-family: "Noto Sans KR";
+    font-weight: 800;
 }
 
 @keyframes fadein {

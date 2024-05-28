@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     width: 100%;
-    height: 480px;
+    height: 750px;
     margin-bottom: 20px;
 }
 .spaceImgBox {
@@ -16,7 +16,7 @@
 }
 .imgBox {
     width: 100%;
-    height: 480px;
+    height: 100%;
     border-radius: 10px;
     overflow: hidden;
     z-index: -99;
@@ -40,7 +40,7 @@
 }
 .carouselItem {
     position: relative;
-    display: flex;
+    display: flex !important;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -49,7 +49,7 @@
 }
 .spaceImg {
     width: 100%;
-    height: 480px;
+    height: 100%;
     margin: auto;
 }
 
@@ -76,13 +76,15 @@
 }
 .desc {
     font-size: 15pt;
-    font-weight: 600;
+    font-weight: 500;
+    font-family: "Noto Sans KR";
     color: #004435;
     display: none;
 }
 .name {
     font-size: 25pt;
     font-weight: 800;
+    font-family: "Noto Sans KR";
     color: #fff;
     padding: 10px 20px;
     background-color: #004435;
@@ -117,6 +119,17 @@
     height: 100%;
     z-index: -99;
 }
+@media (max-width: 1460px) {
+    .spaceCard {
+        height: 600px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .spaceCard {
+        height: 500px;
+    }
+}
 
 @media (max-width: 900px) {
     .imgBox {
@@ -138,27 +151,22 @@
     }
 }
 
+@media (max-width: 750px) {
+    .spaceCard {
+        height: 400px;
+    }
+}
+
 @media (max-width: 500px) {
+    .spaceCard {
+        height: 250px;
+    }
     .imgBox {
         border-radius: 0;
     }
     .spaceImgBox::after {
         border-radius: 0;
     }
-    .name {
-        font-size: 15pt;
-    }
-    .addr {
-        font-size: 12pt;
-        font-weight: 600;
-    }
-    .contents {
-        font-size: 12pt;
-        font-weight: 600;
-    }
-}
-
-@media (max-width: 500px) {
     .name {
         font-size: 13pt;
     }

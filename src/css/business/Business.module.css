@@ -1,3 +1,7 @@
+.main {
+    height: 100vh;
+    overflow-y: hidden;
+}
 .titleBox {
     position: relative;
     margin: auto;
@@ -5,27 +9,11 @@
     width: 75%;
     text-align: center;
 }
-.titleBg {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 150px;
-    height: 20px;
-}
-.titleBg::after {
-    content: '';
-    position: absolute;
-    bottom: 5px;
-    left: 0;
-    width: 150px;
-    height: 20px;
-    background-color: #C3E0A6;
-    z-index: -9;
-}
 .title {
     font-size: 30pt;
     color: #004435;
-    font-weight: 800;
+    font-weight: 900;
+    font-family: "Noto Sans KR";
     margin-bottom: 0;
 }
 .tabMenuBox {
@@ -46,9 +34,10 @@
 .menuItem, .activeMenuItem {
     position: relative;
     list-style: none;
-    font-size: 15pt;
+    font-size: 16pt;
     color: #555555;
     font-weight: 600;
+    font-family: "Noto Sans KR";
     height: 50px;
     line-height: 50px;
     padding: 0 20px;
@@ -59,12 +48,18 @@
     z-index: 5;
 }
 .menuItem:hover, .activeMenuItem {
-    font-size: 23pt;
+    font-size: 22pt;
     line-height: 40px;
     font-weight: 900;
     color: #004435;
 }
 
+@media (max-width: 1500px) {
+    .main {
+        height: fit-content;
+        overflow-y: scroll;
+    }
+}
 @media (max-width: 500px) {
     .tabMenuBox {
         display: flex;

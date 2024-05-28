@@ -77,7 +77,6 @@ export default function Article({db, isLoggedIn}) {
             .join(" ")}>
             <div className={styles.articleContainer}>
                 <div className={styles.titleBox}>
-                    <div className={styles.titleBg}></div>
                     <p className={styles.title}>ARTICLE</p>
                 </div>
                 {showBtn()}

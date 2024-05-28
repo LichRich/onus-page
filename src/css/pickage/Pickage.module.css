@@ -1,0 +1,126 @@
+.pickageSection {
+    height: fit-content;
+    min-height: 100%;
+}
+
+.pickageContainer {
+    position: relative;
+    display: flex;
+    width: 60%;
+    margin: auto;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.titleBox {
+    position: relative;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 0;
+    width: 75%;
+    text-align: center;
+}
+
+.title {
+    font-family: "Noto Sans KR";
+    font-size: 30pt;
+    color: #004435;
+    font-weight: 900;
+    margin-bottom: 0;
+}
+
+.contentsBox {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+
+
+.contentsZone {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+.contentsContainer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+}
+.contentsBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+}
+.contentsImgBox {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    z-index: 10;
+}
+.contentsImg {
+    width: 100%;
+    height: auto;
+}
+.contentsCloseBox {
+    position: fixed;
+    padding: 5px 10px;
+    font-size: 13pt;
+    top: 100px;
+    right: 35%;
+    background-color: #004435;
+    border: 1px solid #004435;
+    z-index: 50;
+    text-align: center;
+    color: #fff;
+    font-family: "Noto Sans KR";
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.contentsCloseBox:hover {
+    color: #004435;
+    background-color: #fff;
+}
+
+@media (max-width: 1600px) {
+    .contentsCloseBox {
+        right: 30%;
+    }
+}
+
+@media (max-width: 1260px) {
+    .contentsBox {
+        flex-direction: column;
+    }
+    .contentsCloseBox {
+        right: 25%;
+    }
+}
+
+@media (max-width: 1080px) {
+    .contentsCloseBox {
+        right: 20%;
+    }
+}
+
+@media (max-width: 780px) {
+    .contentsCloseBox {
+        right: 10%;
+    }
+}

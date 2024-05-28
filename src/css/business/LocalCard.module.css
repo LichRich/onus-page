@@ -29,12 +29,14 @@
 }
 .name {
     font-size: 22pt;
+    font-family: "Noto Sans KR";
     font-weight: 800;
     color: #004435;
     margin: 0;
 }
 .contents {
     font-size: 15pt;
+    font-family: "Noto Sans KR";
     font-weight: 600;
 }
 .imgListBox {

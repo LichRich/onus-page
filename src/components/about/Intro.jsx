@@ -112,7 +112,7 @@ const Intro = () => {
         </div>
         <div className={["containers", styles.introContainer].join(' ')}>
             <div className={styles.introTitleBox}>
-                <h2 className={styles.introTitle}>사회적 협동조합 ONUS</h2>
+                <h2 className={styles.introTitle}>사회적협동조합 ONUS</h2>
             </div>
             <div className={styles.descBox}>
                 <Slider {...carousel_settings}>

@@ -123,10 +123,10 @@ export default function Home() {
                 <div className={styles.introContainer}>
                     <div className={styles.introMsg}>
                         <p className={styles.introMsgContent}>
-                            지역에 점을 찍고 연결하는 사람들.
+                            지역에 점을 찍고 연결하는 사람들
                         </p>
                         <p className={styles.introMsgContent}>
-                            사회적 협동조합 온어스.
+                            사회적협동조합 온어스
                         </p>
                     </div>
                 </div>

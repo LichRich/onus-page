@@ -83,7 +83,6 @@ export default function Project({db, isLoggedIn}) {
     <section className={["sections",styles.projectSection].join(" ")}>
         <div className={styles.container}>
             <div className={styles.titleBox}>
-                <div className={styles.titleBg}></div>
                 <p className={styles.title}>PROJECT</p>
             </div>
             {showBtn()}

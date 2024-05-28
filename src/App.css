@@ -1,5 +1,6 @@
 * {
     word-break: keep-all;
+    font-family: "Noto Sans KR";
 }
 ::-webkit-scrollbar {
     display: none;
@@ -38,7 +39,7 @@ main {
     width: 100%;
     height: 100%;
     z-index: -5;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 #introBg .slick-slider, #introBg .slick-list, #introBg .slick-slide {
@@ -63,12 +64,19 @@ main {
     z-index:99;
     transition: all 0.3s ease;
 }
+.navbarContainer {
+    width: 80%;
+    max-width: 1600px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 .navbar-logo {
     display: flex;
-    width: 20%;
-    /* padding-left: 120px; */
+    width: 15%;
     height: 100%;
-    justify-content: center;
     align-items: center;
 }
 .navbar-logo a {
@@ -84,10 +92,11 @@ main {
     display: flex;
     width: 80%;
     height: 100%;
+    justify-content: space-between;
 }
 .menu-list-box {
     display: flex;
-    width: 55%;
+    width: 62%;
     height: 100%;
     justify-content: end;
     align-items: center;
@@ -97,6 +106,7 @@ main {
     margin: 0 30px;
     text-decoration: none;
     color: #004435;
+    font-family: "Noto Sans KR";
     border: 2px solid #fff;
     font-weight: 600;
     font-size: 15pt;
@@ -110,7 +120,7 @@ main {
 }
 .link-list-box {
     display: flex;
-    width: 45%;
+    width: 33%;
     height: 100%;
     align-items: center;
 }
@@ -128,6 +138,7 @@ main {
     color: #fff;
     background-color: #004435;
     border: 2px solid #004435;
+    font-family: "Noto Sans KR";
     font-weight: 600;
     font-size: 15pt;
     transition: all 0.3s ease;
@@ -137,7 +148,6 @@ main {
     animation-duration: 2000ms;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    margin-right: 100px;
 }
 .link-item:hover {
     background-color: #fff;
@@ -152,6 +162,12 @@ main {
     to {
         background-color: #004435;
         color: #fff;
+    }
+}
+
+@media (max-width: 1680px) {
+    .navbarContainer {
+        width: 90%;
     }
 }
 
@@ -290,7 +306,7 @@ main {
     position: fixed;
     width: 100px;
     top: 50%;
-    right: 12px;
+    right: 11%;
     transform: translateY(-40%);
     z-index: 99;
 }
@@ -310,6 +326,7 @@ main {
     width: 100%;
     padding: 10px 10px;
     font-size: 11pt;
+    font-family: "Noto Sans KR";
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -504,8 +521,17 @@ main {
     background-color: #fff;
     border-top: 2px solid #004435;
 }
+.footer-container {
+    display: flex;
+    width: 90%;
+    max-width: 1600px;
+    height: 100%;
+    margin: auto;
+    justify-content: space-between;
+}
 .footer p {
     margin: 0;
+    font-family: "Noto Sans KR";
 }
 .footer-left {
     display: flex;
@@ -574,6 +600,10 @@ main {
         flex-direction: column;
         height: fit-content;
     }
+    .footer-container {
+        flex-direction: column;
+        height: fit-content;
+    }
     .footer-logo {
         height: 100px;
     }
@@ -623,5 +653,69 @@ main {
     }
     .footer-logo {
         height: 60px;
+    }
+}
+
+
+/********************************************
+
+                comming soon
+
+***********************************************/
+.commingBgBox {
+    display: flex;
+    align-items: end;
+    width: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.commingBgBox::after {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.commingBg {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    z-index: -999;
+}
+.commingTitle {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30pt;
+    font-weight: 900;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 1460px) {
+    .commingBgBox {
+        width: 45%;
+    }
+    .commingTitle {
+        font-size: 25pt;
+    }
+}
+
+@media (max-width: 1150px) {
+    .commingBgBox {
+        width: 65%;
+    }
+}
+
+@media (max-width: 900px) {
+    .commingTitle {
+        font-size: 18pt;
+    }
+}
+
+@media (max-width: 600px) {
+    .commingBgBox {
+        width: 100%;
+    }
+    .commingTitle {
+        top: 30%;
     }
 }
