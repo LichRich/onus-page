@@ -124,9 +124,10 @@ const Intro = () => {
                     </div>
                     <div className={styles.carouselItem}>
                         <div className={styles.contentsBox}>
-                            <p className={styles.contents}>지역공동체를 통한 상생과 시너지를 추구하며</p>
-                            <p className={styles.contents}>지역자원을 새로운 관점으로 재해석하여</p>
-                            <p className={styles.contents}>매력적인 콘텐츠로 풀어가는 활동을 합니다.</p>
+                            <p className={styles.contents}>자주적·자립적·자치적인 조합 활동을 통하여</p>
+                            <p className={styles.contents}>청년이 행복한 삶을 누릴 수 있도록 노력하고</p>
+                            <p className={styles.contents}>지역과 상생하는 네트워크 구축 및 활성화를 목적으로 한다.</p>
+                            <p className={styles.contents}>-정관 제2조 목적-</p>
                         </div>
                     </div>
                 </Slider>
