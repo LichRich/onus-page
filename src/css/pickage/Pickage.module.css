@@ -17,7 +17,7 @@
     position: relative;
     margin: auto;
     margin-top: 60px;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     width: 75%;
     text-align: center;
 }
@@ -29,11 +29,19 @@
     font-weight: 900;
     margin-bottom: 0;
 }
+.titleDesc {
+    font-family: "Noto Sans KR";
+    font-size: 15pt;
+    color: #000;
+    font-weight: 600;
+    margin: 5px;
+}
 
 .contentsBox {
     width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     margin-top: 30px;
@@ -44,11 +52,11 @@
 
 
 .contentsZone {
-    position: absolute;
+    position: fixed;
     top: 80px;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 95vh;
     overflow: scroll;
 }
 .contentsContainer {
@@ -114,6 +122,9 @@
 }
 
 @media (max-width: 1080px) {
+    .titleDesc {
+        font-size: 10pt;
+    }
     .contentsCloseBox {
         right: 20%;
     }
@@ -122,5 +133,11 @@
 @media (max-width: 780px) {
     .contentsCloseBox {
         right: 10%;
+    }
+}
+
+@media (max-width: 600px) {
+    .contentsZone {
+        top: 60px;
     }
 }
